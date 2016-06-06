@@ -49,13 +49,13 @@ dev_deps:
 
 install_ci:
 	go get -u github.com/Masterminds/glide
-	$(MAKE) $(MAKEARGS) setup
 	go get github.com/axw/gocov/gocov
 	go get github.com/mattn/goveralls
 	go get golang.org/x/tools/cmd/cover
 	go get github.com/golang/lint/golint
 	./scripts/travis/get-thrift.sh
 	./scripts/travis/get-thrift-gen.sh
+	$(MAKE) $(MAKEARGS) setup
 
 setup: dev_deps
 	glide --debug install --cache
