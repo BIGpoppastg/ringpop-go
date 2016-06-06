@@ -47,8 +47,9 @@ dev_deps:
 	go get github.com/golang/lint/golint
 	./scripts/go-get-version.sh github.com/vektra/mockery/.../@130a05e
 
-install_ci: setup
+install_ci:
 	go get -u github.com/Masterminds/glide
+	$(MAKE) $(MAKEARGS) setup
 	go get github.com/axw/gocov/gocov
 	go get github.com/mattn/goveralls
 	go get golang.org/x/tools/cmd/cover
